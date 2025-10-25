@@ -22,12 +22,77 @@ body{
   font: 16px/1.6 Inter, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
 }
 
+button, input, textarea, select{ font:inherit }
+
 img{ max-width:100%; height:auto; display:block }
 a{ color:inherit }
 
 .container{ width:min(100% - 32px, var(--maxw)); margin-inline:auto }
 .section{ padding: 84px 0 }
 .section.muted{ background:var(--muted) }
+.section.muted :where(h1,h2,h3,h4,h5,h6,p,li,ol,ul,strong){
+  color:var(--text-dark);
+}
+.section.muted :where(a){
+  color:inherit;
+}
+.note{
+  margin-top:24px;
+  font-size:.85rem;
+  color: color-mix(in srgb, var(--text-dark) 70%, #000 30%);
+  line-height:1.5;
+}
+.note-inverse{
+  margin-top:24px;
+  font-size:.85rem;
+  color: color-mix(in srgb, var(--text-light) 85%, #fff 15%);
+  line-height:1.6;
+}
+.note-inverse a{
+  color:var(--text-light);
+  text-decoration:underline;
+}
+
+.social-links{
+  margin-top:24px;
+  display:flex;
+  flex-wrap:wrap;
+  gap:12px;
+}
+.social-links a{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  width:44px;
+  height:44px;
+  border-radius:50%;
+  border:1px solid rgba(255,255,255,.28);
+  color:var(--text-light);
+  transition: border-color .2s ease, background .2s ease, color .2s ease, transform .2s ease;
+}
+.social-links a:hover{
+  transform: translateY(-2px);
+  border-color: rgba(255,255,255,.6);
+  background: rgba(255,255,255,.08);
+}
+.social-links a:focus-visible{
+  outline:2px solid var(--brand);
+  outline-offset:3px;
+}
+.social-links svg{
+  width:20px;
+  height:20px;
+  fill:currentColor;
+}
+.section.muted .social-links a{
+  border-color: transparent;
+  background: var(--text-dark);
+  color:var(--text-light);
+}
+.section.muted .social-links a:hover{
+  background: color-mix(in srgb, var(--text-dark) 85%, #000 15%);
+  border-color: transparent;
+}
 
 h1,h2,h3{ line-height:1.2; margin:0 0 12px }
 h1{ font-size: clamp(28px, 5vw, 44px) }
@@ -56,7 +121,18 @@ h3{ font-size: 18px }
 }
 .nav{ display:flex; align-items:center; justify-content:space-between; padding:14px 0 }
 .logo{
-  text-decoration:none; color:var(--text-light); font-weight:700; letter-spacing:.02em;
+  display:inline-flex;
+  align-items:center;
+  text-decoration:none;
+}
+.logo-mark{
+  height:36px;
+  width:auto;
+  display:block;
+}
+.logo:focus-visible{
+  outline:2px solid var(--brand);
+  outline-offset:4px;
 }
 .nav-list{
   display:flex; gap:16px; align-items:center; list-style:none; padding:0; margin:0;
@@ -83,6 +159,12 @@ h3{ font-size: 18px }
   box-shadow: var(--shadow);
   border:1px solid rgba(255,255,255,.06);
 }
+.hero-image{
+  width:100%;
+  border-radius:12px;
+  box-shadow: var(--shadow);
+  border:1px solid rgba(255,255,255,.06);
+}
 
 .cta-row{ display:flex; gap:12px; flex-wrap:wrap }
 .btn{
@@ -94,16 +176,33 @@ h3{ font-size: 18px }
 .btn-primary:hover{ filter:brightness(1.06) }
 .btn-outline{ color:var(--text-light); background:transparent }
 .btn-outline:hover{ background:rgba(255,255,255,.06) }
+.section.muted .btn-outline{
+  color:var(--text-dark);
+  border-color: color-mix(in srgb, var(--text-dark) 25%, transparent 75%);
+}
+.section.muted .btn-outline:hover{
+  background: color-mix(in srgb, var(--text-dark) 12%, transparent 88%);
+}
 
 /* ===== Logos row ===== */
 .logo-row{
-  display:grid; gap:12px; grid-template-columns: repeat(4, 1fr);
+  display:grid; gap:12px; grid-template-columns: repeat(3, 1fr);
   list-style:none; padding:0; margin: 12px 0 0;
 }
 .logo-box{
   display:grid; place-items:center; height:60px;
   background: var(--panel); border-radius: 12px; color: var(--subtle);
   border:1px solid rgba(255,255,255,.06);
+}
+.logo-box a{
+  display:grid;
+  place-items:center;
+  height:100%;
+  width:100%;
+}
+.logo-box img{
+  max-height:50px;
+  width:auto;
 }
 
 /* ===== Team ===== */
@@ -123,24 +222,6 @@ h3{ font-size: 18px }
 .links a{ color: var(--accent); text-decoration: none }
 .links a:hover{ text-decoration: underline }
 
-#team,
-#team h2,
-#team h3,
-#team p,
-#supported-by,
-#supported-by h2,
-#supported-by p,
-#supported-by .eyebrow,
-#early-access,
-#early-access h2,
-#early-access p,
-#contact,
-#contact h2,
-#contact p,
-#contact a{
-  color:var(--text-dark);
-}
-
 #team .role{
   color: color-mix(in srgb, var(--text-dark) 70%, #fff 30%);
 }
@@ -159,10 +240,13 @@ h3{ font-size: 18px }
 
 /* ===== Footer ===== */
 .site-footer{
-  padding: 24px 0; border-top: 1px solid rgba(255,255,255,.06);
-  background: #0a0c11;
+  padding: 36px 0; border-top: 1px solid rgba(255,255,255,.06);
+  background: var(--bg);
+  color:var(--text-light);
 }
-.footer-grid{ display:flex; justify-content:space-between; align-items:center }
+.site-footer a{ color:var(--text-light); }
+.site-footer a:hover{ text-decoration: underline; }
+.footer-grid{ display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:12px }
 
 /* Section anchor offset for sticky header */
 section{ scroll-margin-top: 96px }
