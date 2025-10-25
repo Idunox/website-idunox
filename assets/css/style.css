@@ -1,15 +1,15 @@
+/* ===== Base & theme ===== */
 :root{
-  --bg: #0b0c10;
-  --panel: #111318;
-  --muted: #161a22;
-  --text: #e6e8eb;
+  --bg: #0b0d12;
+  --panel: #10131a;
+  --muted: #141823;
+  --text: #e9edf2;
   --subtle: #b6bdc7;
-  --brand: #4f8cff;
-  --brand-ink: #0f1b3a;
-  --accent: #7de2d1;
-  --maxw: 1100px;
-  --radius: 16px;
-  --shadow: 0 6px 24px rgba(0,0,0,.25);
+  --brand: #5a8bff;
+  --accent: #69e0ce;
+  --maxw: 1120px;
+  --radius: 18px;
+  --shadow: 0 10px 28px rgba(0,0,0,.28);
 }
 
 *{ box-sizing:border-box }
@@ -18,76 +18,69 @@ body{
   margin:0;
   background:var(--bg);
   color:var(--text);
-  font: 16px/1.6 system-ui, -apple-system, Segoe UI, Roboto, Inter, Helvetica, Arial, sans-serif;
+  font: 16px/1.6 Inter, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
 }
 
 img{ max-width:100%; height:auto; display:block }
+a{ color:inherit }
 
-.container{
-  width: min(100% - 32px, var(--maxw));
-  margin-inline: auto;
-}
-
-.section{
-  padding: 72px 0;
-}
-.section.muted{
-  background: var(--muted);
-}
+.container{ width:min(100% - 32px, var(--maxw)); margin-inline:auto }
+.section{ padding: 84px 0 }
+.section.muted{ background:var(--muted) }
 
 h1,h2,h3{ line-height:1.2; margin:0 0 12px }
 h1{ font-size: clamp(28px, 5vw, 44px) }
 h2{ font-size: clamp(22px, 4vw, 32px); margin-bottom: 24px }
 h3{ font-size: 18px }
-.lead{ color:var(--subtle); font-size:1.125rem; margin:0 0 24px }
-
+.lead{ color:var(--subtle); font-size:1.125rem; margin:8px 0 24px }
 .eyebrow{
-  text-transform: uppercase;
-  letter-spacing:.12em;
-  font-size:.8rem;
-  color: var(--subtle);
-  margin: 0 0 12px;
+  text-transform:uppercase; letter-spacing:.12em; font-size:.8rem; color:var(--subtle);
+  margin:0 0 10px;
 }
 
-/* Header / nav */
+/* skip link */
+.skip-link{
+  position:absolute; left:-9999px; top:auto; width:1px; height:1px; overflow:hidden;
+}
+.skip-link:focus{
+  left:16px; top:12px; width:auto; height:auto; background:#fff; color:#000; padding:8px 10px; border-radius:8px; z-index:1000;
+}
+
+/* ===== Header / nav ===== */
 .site-header{
-  position: sticky; top:0; z-index:50;
-  backdrop-filter: blur(8px);
+  position:sticky; top:0; z-index:50;
+  backdrop-filter: blur(10px);
   background: color-mix(in oklab, var(--bg), transparent 30%);
   border-bottom: 1px solid rgba(255,255,255,.06);
 }
-.nav{
-  display:flex; align-items:center; justify-content:space-between;
-  padding: 14px 0;
-}
+.nav{ display:flex; align-items:center; justify-content:space-between; padding:14px 0 }
 .logo{
   text-decoration:none; color:var(--text); font-weight:700; letter-spacing:.02em;
 }
 .nav-list{
-  display:flex; gap: 16px; align-items:center; list-style:none; padding:0; margin:0;
+  display:flex; gap:16px; align-items:center; list-style:none; padding:0; margin:0;
 }
 .nav-list a{
-  color:var(--subtle); text-decoration:none; padding:8px 10px; border-radius:10px;
+  color:var(--subtle); text-decoration:none; padding:8px 10px; border-radius:12px;
 }
-.nav-list a:hover{ color:var(--text); background:rgba(255,255,255,.06) }
-.nav-list .divider{
-  width:1px; height:20px; background:rgba(255,255,255,.12); margin:0 4px;
-}
+.nav-list a:hover{ color:var(--text); background:rgba(255,255,255,.07) }
+.nav-list .divider{ width:1px; height:20px; background:rgba(255,255,255,.12); margin:0 4px }
 
-/* Hero */
-.hero{ padding-top: 96px }
+/* ===== Hero ===== */
+.hero{ padding-top:100px }
 .hero-grid{
-  display:grid; gap:36px; align-items:center;
-  grid-template-columns: 1.1fr .9fr;
+  display:grid; gap:40px; align-items:center;
+  grid-template-columns: 1.15fr .85fr;
 }
+.hero-copy h1{ margin-bottom:10px }
 .hero-art .placeholder{
-  aspect-ratio: 4/3;
-  border-radius: var(--radius);
+  aspect-ratio: 4/3; border-radius: var(--radius);
   background:
-    radial-gradient(50% 50% at 70% 20%, color-mix(in oklab, var(--accent), transparent 60%), transparent),
-    radial-gradient(50% 50% at 20% 70%, color-mix(in oklab, var(--brand), transparent 60%), transparent),
-    linear-gradient(135deg, var(--panel), #0f1117);
+    radial-gradient(60% 60% at 70% 20%, color-mix(in oklab, var(--accent), transparent 55%), transparent 60%),
+    radial-gradient(60% 60% at 20% 80%, color-mix(in oklab, var(--brand), transparent 55%), transparent 60%),
+    linear-gradient(135deg, var(--panel), #0f1118);
   box-shadow: var(--shadow);
+  border:1px solid rgba(255,255,255,.06);
 }
 
 .cta-row{ display:flex; gap:12px; flex-wrap:wrap }
@@ -97,11 +90,11 @@ h3{ font-size: 18px }
   border:1px solid rgba(255,255,255,.12);
 }
 .btn-primary{ background:var(--brand); color:#fff; border-color: transparent }
-.btn-primary:hover{ filter:brightness(1.05) }
+.btn-primary:hover{ filter:brightness(1.06) }
 .btn-outline{ color:var(--text); background:transparent }
 .btn-outline:hover{ background:rgba(255,255,255,.06) }
 
-/* Logos row */
+/* ===== Logos row ===== */
 .logo-row{
   display:grid; gap:12px; grid-template-columns: repeat(4, 1fr);
   list-style:none; padding:0; margin: 12px 0 0;
@@ -112,9 +105,9 @@ h3{ font-size: 18px }
   border:1px solid rgba(255,255,255,.06);
 }
 
-/* Team */
+/* ===== Team ===== */
 .team-grid{
-  display:grid; gap:20px; grid-template-columns: repeat(4, 1fr);
+  display:grid; gap:22px; grid-template-columns: repeat(3, 1fr);
 }
 .card{
   background: var(--panel); border-radius: var(--radius);
@@ -129,26 +122,27 @@ h3{ font-size: 18px }
 .links a{ color: var(--accent); text-decoration: none }
 .links a:hover{ text-decoration: underline }
 
-/* Contact */
+/* ===== Contact ===== */
 .contact p{ margin:.3rem 0 }
 
-/* Footer */
+/* ===== Footer ===== */
 .site-footer{
   padding: 24px 0; border-top: 1px solid rgba(255,255,255,.06);
-  background: #0a0b0f;
+  background: #0a0c11;
 }
 .footer-grid{ display:flex; justify-content:space-between; align-items:center }
 
 /* Section anchor offset for sticky header */
-section{ scroll-margin-top: 84px }
+section{ scroll-margin-top: 96px }
 
-/* Responsive */
-@media (max-width: 900px){
+/* ===== Responsive ===== */
+@media (max-width: 980px){
   .hero-grid{ grid-template-columns: 1fr }
+}
+@media (max-width: 720px){
   .team-grid{ grid-template-columns: repeat(2, 1fr) }
   .logo-row{ grid-template-columns: repeat(2, 1fr) }
 }
 @media (max-width: 520px){
-  .team-grid{ grid-template-columns: 1fr }
-  .logo-row{ grid-template-columns: 1fr 1fr }
+  .team-grid, .logo-row{ grid-template-columns: 1fr }
 }
