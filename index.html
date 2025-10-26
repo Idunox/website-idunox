@@ -12,6 +12,9 @@
   <meta property="og:description" content="Detecting disease risks on a molecular level while they are still silent." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://www.idunox.com/" />
+  <meta property="og:image" content="https://www.idunox.com/assets/img/logo_idunox.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:image" content="https://www.idunox.com/assets/img/logo_idunox.png" />
   <link rel="canonical" href="https://www.idunox.com/" />
 
   <!-- Optional font (you can remove these 2 lines to stay 100% system-font) -->
@@ -220,28 +223,6 @@
     </div>
   </footer>
 
-  <script>
-    // current year in footer
-    document.getElementById('year').textContent = new Date().getFullYear();
-
-    const header = document.querySelector('.site-header');
-    const navToggle = document.querySelector('.nav-toggle');
-    const navLinks = document.querySelectorAll('.nav-list a');
-
-    if (navToggle && header) {
-      navToggle.addEventListener('click', () => {
-        const isOpen = navToggle.getAttribute('aria-expanded') === 'true';
-        navToggle.setAttribute('aria-expanded', String(!isOpen));
-        header.classList.toggle('nav-open', !isOpen);
-      });
-
-      navLinks.forEach(link => {
-        link.addEventListener('click', () => {
-          navToggle.setAttribute('aria-expanded', 'false');
-          header.classList.remove('nav-open');
-        });
-      });
-    }
-  </script>
+  <script src="assets/js/main.js"></script>
 </body>
 </html>
