@@ -162,11 +162,12 @@ h3{ font-size: 18px }
 .nav-list{
   display:flex; gap:16px; align-items:center; list-style:none; padding:0; margin:0;
 }
+.nav-list .divider{ display:none; }
+
 .nav-list a{
   color:var(--subtle); text-decoration:none; padding:8px 10px; border-radius:12px;
 }
 .nav-list a:hover{ color:var(--text-light); background:rgba(255,255,255,.07) }
-.nav-list .divider{ width:1px; height:20px; background:rgba(255,255,255,.12); margin:0 4px }
 
 /* ===== Hero ===== */
 .hero{ padding-top:100px }
