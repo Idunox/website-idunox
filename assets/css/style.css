@@ -125,6 +125,31 @@ h3{ font-size: 18px }
   align-items:center;
   text-decoration:none;
 }
+.nav-toggle{
+  display:none;
+  align-items:center;
+  justify-content:center;
+  width:44px;
+  height:44px;
+  border:1px solid rgba(255,255,255,.28);
+  border-radius:12px;
+  background:transparent;
+  color:inherit;
+  cursor:pointer;
+  transition: border-color .2s ease, background .2s ease;
+  position:relative;
+}
+.nav-toggle span{
+  position:absolute;
+  left:50%;
+  top:50%;
+  width:22px;
+  height:2px;
+  background:var(--text-light);
+  transform: translate(-50%, -50%);
+  transform-origin:center;
+  transition: transform .2s ease, opacity .2s ease, top .2s ease;
+}
 .logo-mark{
   height:36px;
   width:auto;
@@ -256,6 +281,57 @@ section{ scroll-margin-top: 96px }
   .hero-grid{ grid-template-columns: 1fr }
 }
 @media (max-width: 720px){
+  .nav{
+    flex-wrap:wrap;
+    gap:12px;
+  }
+  .nav-toggle{
+    display:inline-flex;
+  }
+  .site-header.nav-open .nav-toggle{
+    border-color: rgba(255,255,255,.6);
+    background: rgba(255,255,255,.08);
+  }
+  .nav-toggle span:nth-child(1){
+    top: calc(50% - 8px);
+  }
+  .nav-toggle span:nth-child(2){
+    top:50%;
+  }
+  .nav-toggle span:nth-child(3){
+    top: calc(50% + 8px);
+  }
+  .site-header.nav-open .nav-toggle span:nth-child(1){
+    top:50%;
+    transform: translate(-50%, -50%) rotate(45deg);
+  }
+  .site-header.nav-open .nav-toggle span:nth-child(2){
+    opacity:0;
+  }
+  .site-header.nav-open .nav-toggle span:nth-child(3){
+    top:50%;
+    transform: translate(-50%, -50%) rotate(-45deg);
+  }
+  .nav > nav{
+    width:100%;
+  }
+  .nav-list{
+    display:none;
+    flex-direction:column;
+    width:100%;
+    gap:8px;
+    padding:16px;
+    margin-top:0;
+    background: color-mix(in srgb, var(--bg) 75%, transparent 25%);
+    border:1px solid rgba(255,255,255,.08);
+    border-radius:16px;
+  }
+  .site-header.nav-open .nav-list{
+    display:flex;
+  }
+  .nav-list a{
+    width:100%;
+  }
   .team-grid{ grid-template-columns: repeat(2, 1fr) }
   .logo-row{ grid-template-columns: repeat(2, 1fr) }
 }

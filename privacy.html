@@ -18,6 +18,11 @@
       <a class="logo" href="index.html#home" aria-label="Idunox home">
         <img class="logo-mark" src="assets/img/logo_idunox.png" alt="Idunox" />
       </a>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-label="Toggle navigation">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
       <nav aria-label="Primary">
         <ul class="nav-list">
           <li><a href="index.html#home">Home</a></li>
@@ -150,6 +155,25 @@
 
   <script>
     document.getElementById('year').textContent = new Date().getFullYear();
+
+    const header = document.querySelector('.site-header');
+    const navToggle = document.querySelector('.nav-toggle');
+    const navLinks = document.querySelectorAll('.nav-list a');
+
+    if (navToggle && header) {
+      navToggle.addEventListener('click', () => {
+        const isOpen = navToggle.getAttribute('aria-expanded') === 'true';
+        navToggle.setAttribute('aria-expanded', String(!isOpen));
+        header.classList.toggle('nav-open', !isOpen);
+      });
+
+      navLinks.forEach(link => {
+        link.addEventListener('click', () => {
+          navToggle.setAttribute('aria-expanded', 'false');
+          header.classList.remove('nav-open');
+        });
+      });
+    }
   </script>
 </body>
 </html>
