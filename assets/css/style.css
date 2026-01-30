@@ -311,9 +311,19 @@ h3{ font-size: 18px }
   box-shadow: var(--shadow);
   border:1px solid rgba(255,255,255,.08);
 }
+.iduscore-carousel{
+  position:relative;
+  aspect-ratio: 16 / 9;
+  border-radius: var(--radius);
+  overflow:hidden;
+  background: var(--panel);
+  box-shadow: var(--shadow);
+  border:1px solid rgba(255,255,255,.08);
+}
+.iduscore-carousel > figure{ height:100%; margin:0 }
 .iduscore-carousel img{
   width:100%;
-  height:auto;
+  height:100%;
   display:block;
   object-fit:cover;
 }
