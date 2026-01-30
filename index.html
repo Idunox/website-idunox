@@ -45,6 +45,7 @@
       <nav aria-label="Primary">
         <ul class="nav-list">
           <li><a href="#home">Home</a></li>
+          <li><a href="#iduscore">IduScore</a></li>
           <li><a href="#team">Team</a></li>
           <li><a href="#early-access">Early Access</a></li>
           <li><a href="#newsletter">Newsletter</a></li>
@@ -58,7 +59,7 @@
   </header>
 
   <main id="home">
-    <!-- Hero -->
+    <!-- Hero (dark) -->
     <section class="section hero">
       <div class="container hero-grid">
         <div class="hero-copy">
@@ -80,8 +81,52 @@
       </div>
     </section>
 
+    <!-- Divider between Hero and IduScore -->
+    <!-- IduScore (light) -->
+    <section class="section muted" id="iduscore">
+      <div class="container iduscore-grid">
+        <div class="iduscore-copy">
+          <p class="eyebrow">Our first product</p>
+          <h2>IduScore</h2>
+          <p>IduScore is our first product, and it is currently in development.</p>
+          <p>It turns routine blood test values plus a short lifestyle questionnaire into clear, easy to understand insights on how your wellbeing may evolve over the next 10 years.</p>
+          <p>It covers four areas: cardiovascular (heart), cognitive (brain), respiratory (lungs), and renal (kidneys).</p>
+          <div class="cta-row">
+            <a class="btn btn-primary" href="https://www.iduscore.com/" target="_blank" rel="noopener">Visit IduScore</a>
+          </div>
+        </div>
+
+        <div class="iduscore-carousel" data-carousel data-interval="4800" role="region" aria-label="IduScore product screenshots">
+          <button class="carousel-arrow left" aria-label="Previous image">&#8592;</button>
+          <button class="carousel-arrow right" aria-label="Next image">&#8594;</button>
+          <figure class="carousel-slide is-active">
+            <img src="assets/img/iduscore_1.avif" alt="IduScore product screenshot 1" loading="lazy" class="carousel-img" />
+          </figure>
+          <figure class="carousel-slide">
+            <img src="assets/img/iduscore_2.avif" alt="IduScore product screenshot 2" loading="lazy" class="carousel-img" />
+          </figure>
+          <figure class="carousel-slide">
+            <img src="assets/img/iduscore_3.avif" alt="IduScore product screenshot 3" loading="lazy" class="carousel-img" />
+          </figure>
+          <figure class="carousel-slide">
+            <img src="assets/img/iduscore_4.avif" alt="IduScore product screenshot 4" loading="lazy" class="carousel-img" />
+          </figure>
+          <figure class="carousel-slide">
+            <img src="assets/img/iduscore_5.avif" alt="IduScore product screenshot 5" loading="lazy" class="carousel-img" />
+          </figure>
+          <div class="carousel-modal" style="display:none;">
+            <button class="carousel-arrow left modal-arrow" aria-label="Previous image">&#8592;</button>
+            <button class="carousel-arrow right modal-arrow" aria-label="Next image">&#8594;</button>
+            <button class="carousel-close" aria-label="Close"><span class="close-x">&times;</span></button>
+            <img class="carousel-modal-img" src="" alt="Expanded IduScore screenshot" />
+          </div>
+        </div>
+      </div>
+    </section>
+
     <!-- Team -->
-    <section class="section muted" id="team">
+    <!-- Team (dark) -->
+    <section class="section" id="team">
       <div class="container">
         <h2>Team</h2>
 
@@ -123,7 +168,8 @@
     </section>
 
     <!-- Early Access -->
-    <section class="section" id="early-access">
+    <!-- Early Access (light) -->
+    <section class="section muted" id="early-access">
       <div class="container">
         <h2>Early Access Program</h2>
         <div class="stack">
@@ -140,21 +186,23 @@
     </section>
 
     <!-- Newsletter -->
-    <section class="section muted" id="newsletter">
+    <!-- Newsletter (dark) -->
+    <section class="section" id="newsletter">
       <div class="container">
         <h2>Newsletter</h2>
         <div class="stack">
           <p>Stay updated on our progress, subscribe to our newsletter to get quarterly updates.</p>
           <p>We follow GDPR, so you will not get spam.</p>
           <div class="stack-cta">
-            <a class="btn btn-outline" href="https://57a726f0.sibforms.com/serve/MUIFAPCp9HfWhEfXjTXTABA93pU5HxD4DkmML7r3edvQPY2InZBmJtetGSJOLPegALY7I2L0gqiOMaI0vT_woCTz1J1VFh80RN9mt1v8iqrT-_wk1ohq9hwDSIT37UcjItIvcFZ0Hs5Jm2b3Mnar5i2I5hMoSnmds_NUpcjbK2r-iYINIMB67A0YXvt4vA3uy_cU9Ya0eRMnBPOL" target="_blank" rel="noopener">Subscribe to Newsletter</a>
+            <a class="btn btn-newsletter" href="https://57a726f0.sibforms.com/serve/MUIFAPCp9HfWhEfXjTXTABA93pU5HxD4DkmML7r3edvQPY2InZBmJtetGSJOLPegALY7I2L0gqiOMaI0vT_woCTz1J1VFh80RN9mt1v8iqrT-_wk1ohq9hwDSIT37UcjItIvcFZ0Hs5Jm2b3Mnar5i2I5hMoSnmds_NUpcjbK2r-iYINIMB67A0YXvt4vA3uy_cU9Ya0eRMnBPOL" target="_blank" rel="noopener">Subscribe to Newsletter</a>
           </div>
         </div>
       </div>
     </section>
 
     <!-- Supported by (logos strip) -->
-    <section class="section" id="supported-by">
+    <!-- Supported by (light) -->
+    <section class="section muted" id="supported-by">
       <div class="container">
         <h2>Supported by</h2>
         <ul class="logo-row">
@@ -198,7 +246,8 @@
     </section>
 
     <!-- Contact -->
-    <section class="section muted" id="contact">
+    <!-- Contact (dark) -->
+    <section class="section" id="contact">
       <div class="container">
         <h2>Contact</h2>
         <address class="contact">
@@ -230,15 +279,17 @@
   </main>
 
   <footer class="site-footer">
-    <div class="container footer-grid">
-      <p>© <span id="year"></span> Idunox</p>
-      <p><a href="privacy.html">Privacy Policy</a></p>
-    </div>
-    <div class="container">
-      <p class="note note-inverse">
-        Idunox is currently in the stage of product development and, as such, does not have any products available for purchase at this time. The information provided on this landing page is for informational purposes only and does not constitute an offer or solicitation to buy any products or services. Details shared here are subject to change as we continue to develop and refine our product offering. Please read our <a href="privacy.html">privacy-policy</a> to understand how we treat your data and your rights.
-      </p>
-    </div>
+    <section class="section muted" id="footer">
+      <div class="container footer-grid">
+        <p>© <span id="year"></span> Idunox</p>
+        <p><a href="privacy.html">Privacy Policy</a></p>
+      </div>
+      <div class="container">
+        <p class="note">
+          Idunox is currently in the stage of product development and, as such, does not have any products available for purchase at this time. The information provided on this website is for informational purposes only and does not constitute an offer or solicitation to buy any products or services. Details shared here are subject to change as we continue to develop and refine our product offering. Please read our <a href="privacy.html">privacy-policy</a> to understand how we treat your data and your rights.
+        </p>
+      </div>
+    </section>
   </footer>
 
   <script src="assets/js/main.js"></script>
