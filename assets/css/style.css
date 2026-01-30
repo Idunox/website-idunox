@@ -324,8 +324,9 @@ h3{ font-size: 18px }
 
 /* ===== Logos row ===== */
 .logo-row{
-  display:grid; gap:12px; grid-template-columns: repeat(3, 1fr);
+  display:grid; gap:24px; grid-template-columns: repeat(5, 1fr);
   list-style:none; padding:0; margin: 12px 0 0;
+  align-items:center;
 }
 .logo-box{
   display:grid; place-items:center; height:60px;
@@ -401,6 +402,7 @@ section{ scroll-margin-top: 96px }
   .iduscore-grid{
     grid-template-columns: 1fr;
   }
+  .logo-row{ grid-template-columns: repeat(3, 1fr); gap:18px }
 }
 @media (max-width: 720px){
   .nav{
@@ -458,5 +460,5 @@ section{ scroll-margin-top: 96px }
   .logo-row{ grid-template-columns: repeat(2, 1fr) }
 }
 @media (max-width: 520px){
-.team-grid, .logo-row{ grid-template-columns: 1fr }
+team-grid, .logo-row{ grid-template-columns: 1fr }
 }
