@@ -24,4 +24,19 @@ if (navToggle && header) {
   });
 }
 
+const backToTopBtn = document.querySelector('.back-to-top');
+
+if (backToTopBtn) {
+  const toggleBackToTop = () => {
+    backToTopBtn.classList.toggle('is-visible', window.scrollY > 320);
+  };
+
+  toggleBackToTop();
+  window.addEventListener('scroll', toggleBackToTop, { passive: true });
+
+  backToTopBtn.addEventListener('click', () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+}
+
 // Auto-carousel logic removed (static image used)
