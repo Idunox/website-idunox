@@ -399,13 +399,89 @@ h3{ font-size:18px }
   height:20px;
   fill:currentColor;
 }
+.social-links a.social-link-crunchbase{
+  border:none;
+  background:transparent;
+}
+.social-links a.social-link-linkedin{
+  border:none;
+  background:transparent;
+}
+.social-links a.social-link-instagram{
+  border:none;
+  background:transparent;
+}
+.social-links a.social-link-x{
+  border:none;
+  background:transparent;
+}
+.social-links a.social-link-linkedin:hover{
+  border-color:transparent;
+  background:transparent;
+}
+.social-links a.social-link-instagram:hover{
+  border-color:transparent;
+  background:transparent;
+}
+.social-links a.social-link-x:hover{
+  border-color:transparent;
+  background:transparent;
+}
+.social-links a.social-link-crunchbase:hover{
+  border-color:transparent;
+  background:transparent;
+}
+.social-links .linkedin-icon{
+  width:32px;
+  height:32px;
+  fill:none;
+}
+.social-links .crunchbase-icon{
+  width:32px;
+  height:32px;
+  fill:none;
+}
+.social-links .instagram-icon{
+  width:32px;
+  height:32px;
+  fill:none;
+}
+.social-links .x-icon{
+  width:32px;
+  height:32px;
+  fill:none;
+}
 .section.muted .social-links a{
   border-color:transparent;
   background:var(--text-dark);
   color:var(--text-light);
 }
+.section.muted .social-links a.social-link-crunchbase{
+  background:transparent;
+}
+.section.muted .social-links a.social-link-linkedin{
+  background:transparent;
+}
+.section.muted .social-links a.social-link-instagram{
+  background:transparent;
+}
+.section.muted .social-links a.social-link-x{
+  background:transparent;
+}
 .section.muted .social-links a:hover{
   background:color-mix(in srgb, var(--text-dark) 85%, #000 15%);
+}
+.section.muted .social-links a.social-link-linkedin:hover{
+  background:transparent;
+}
+.section.muted .social-links a.social-link-instagram:hover{
+  background:transparent;
+}
+.section.muted .social-links a.social-link-x:hover{
+  background:transparent;
+}
+.section.muted .social-links a.social-link-crunchbase:hover{
+  background:transparent;
 }
 
 .site-footer{
